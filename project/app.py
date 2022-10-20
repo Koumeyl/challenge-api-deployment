@@ -61,9 +61,7 @@ async def post_data(data: Data = Body(embed=True)):
     print("type.data: ",type(data.dict()))
     df = pd.DataFrame.from_dict([data.dict()])
     df = preprocessing(df)
-    print(f"preprocessed df {df.head()}")
+    print(f"preprocessed df------------------ {df.head()}")
     pred = prediction(df)
-    print(pred)
     prediction_dict = {"prediction" : pred[0]}
-    print(data.dict())
     return prediction_dict

@@ -1,9 +1,17 @@
 import pickle
 import pandas as pd
+import enum as Enum
+
 
 def prediction(df):
-    print("predict df:", df)
-    pickled_model = pickle.load(open('./model/finalized_model.sav', 'rb'))
+    print("predict df:",df)
+    if "HOUSE" in df["property_type"].values:
+        pickled_model = pickle.load(open('./model/finalized_house_model.sav', 'rb'))
+    if "APARTMENT" in df["property_type"].values:
+        pickled_model = pickle.load(open('./model/finalized_apartment_model.sav', 'rb'))
+
+
+
     df_code = pd.read_excel('./data/zipcode_be.xlsx')
     df['code'] = df['zip_code']
     df['code']=df['code'].astype(int)

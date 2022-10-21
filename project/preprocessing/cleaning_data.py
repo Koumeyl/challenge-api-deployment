@@ -9,4 +9,6 @@ def preprocessing(df):
     u = df.select_dtypes(bool)
     df[u.columns] = u.astype(int)
     df.head()
+    
+
     return df

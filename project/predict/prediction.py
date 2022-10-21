@@ -1,14 +1,14 @@
 import pickle
 import pandas as pd
 import enum as Enum
-
-
+pickled_model_house =pickle.load(open('./model/finalized_house_model.sav', 'rb'))
+pickled_model_apartment = pickle.load(open('./model/finalized_apartment_model.sav', 'rb'))
 def prediction(df):
     print("predict df:",df)
     if "HOUSE" in df["property_type"].values:
-        pickled_model = pickle.load(open('./model/finalized_house_model.sav', 'rb'))
+        pickled_model = pickled_model_house
     if "APARTMENT" in df["property_type"].values:
-        pickled_model = pickle.load(open('./model/finalized_apartment_model.sav', 'rb'))
+        pickled_model = pickled_model_apartment
 
 
 

@@ -1,4 +1,5 @@
 from enum import Enum
+import os
 from typing import Optional
 from fastapi import Body,FastAPI, HTTPException
 from pydantic import BaseModel
@@ -39,7 +40,8 @@ class Data(BaseModel):
     building_state: Optional[
       Building_state]  | None = None
 
-app = FastAPI()
+PORT = os.environ.get("PORT", 8000)
+app = FastAPI(port=PORT)
 
 @app.get("/")
 async def root():

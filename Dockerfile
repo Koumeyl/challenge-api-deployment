@@ -17,6 +17,8 @@ RUN pip install --upgrade pip
 # Install dependencies from "requirements.txt"
 RUN pip install -r requirements.txt
 
+RUN pip install pandas openpyxl
+
 # Run the app
 # Set host to 0.0.0.0 to make it run on the container network
 # Set port to the env variable PORT to make it easy to choose the port on the server

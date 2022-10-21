@@ -4,6 +4,7 @@ import enum as Enum
 import pickle
 pickled_model_house =pickle.load(open('./model/finalized_house_model.sav', 'rb'))
 pickled_model_apartment = pickle.load(open('./model/finalized_apartment_model.sav', 'rb'))
+df_code = pd.read_excel('./data/zipcode_be.xlsx')
 def prediction(df):
     print("predict df:",df)
     if "HOUSE" in df["property_type"].values:
@@ -13,7 +14,7 @@ def prediction(df):
 
 
 
-    df_code = pd.read_excel('./data/zipcode_be.xlsx')
+    
     df['code'] = df['zip_code']
     df['code']=df['code'].astype(int)
     df = df.merge(df_code, on='code', how='left')

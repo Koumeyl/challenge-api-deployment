@@ -5,7 +5,6 @@ FROM python:3.10
 RUN mkdir /app
 
 
-
 # Copy all the files in the current directory in /app
 COPY . /app
 
@@ -21,4 +20,4 @@ RUN pip install -r requirements.txt
 # Run the app
 # Set host to 0.0.0.0 to make it run on the container network
 # Set port to the env variable PORT to make it easy to choose the port on the server
-CMD uvicorn app:app --host 0.0.0.0 --port $PORT
+CMD uvicorn app:app --host 0.0.0.0 --port 8080

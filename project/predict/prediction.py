@@ -1,6 +1,7 @@
 
 import pandas as pd
 import enum as Enum
+import pickle
 pickled_model_house =pickle.load(open('./model/finalized_house_model.sav', 'rb'))
 pickled_model_apartment = pickle.load(open('./model/finalized_apartment_model.sav', 'rb'))
 def prediction(df):

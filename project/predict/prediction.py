@@ -1,4 +1,4 @@
-import pickle
+
 import pandas as pd
 import enum as Enum
 pickled_model_house =pickle.load(open('./model/finalized_house_model.sav', 'rb'))

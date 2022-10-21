@@ -20,4 +20,4 @@ RUN pip install -r requirements.txt
 # Run the app
 # Set host to 0.0.0.0 to make it run on the container network
 # Set port to the env variable PORT to make it easy to choose the port on the server
-CMD uvicorn app:app --host 0.0.0.0 --port 8080
+CMD uvicorn app:app --host 0.0.0.0 --port 10000
